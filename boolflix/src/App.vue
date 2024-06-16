@@ -38,8 +38,8 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
  }
   },
   created() {
-    this.getFilms();
-    this.Search();
+   // this.getFilms();
+    //this.Search();
   },
  
 }
