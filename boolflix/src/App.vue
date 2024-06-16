@@ -8,18 +8,19 @@ export default {
   data() {
     return {
       films : [],
+      
     }
   },
   methods: {
-     getFilms(){
+     getFilms(textSearched){
       
 
 // Make a request for a user with a given ID
-axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d1a49d7ccbcf73&query=i&include_adult=true&language=it&page=1%27')
+axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d1a49d7ccbcf73&query=' + textSearched)
   .then( (response) => {
     // handle success
     console.log(response.data.results);
-    this.films = response.data.results
+    this.films = response.data.results;
   })
   .catch(function (error) {
     // handle error
@@ -29,12 +30,18 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
     // always executed
   });
      
-     }
-
+     },
+ Search(textSearched){
+  console.log(textSearched)
+  
+  this.getFilms(textSearched)
+ }
   },
   created() {
     this.getFilms();
+    this.Search();
   },
+ 
 }
 
  
@@ -44,12 +51,16 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
  <main>
   <ul>
     <li v-for="(film, index) in films" :key="index">
-{{ film.original_title }}
+
  {{ film.title }}
+ {{ film.original_title }}
     {{ film.original_language }}
     {{ film.vote_average }}
 </li>
   </ul>
+
+  <AppMain @Searched-Film="Search" />
+  
  </main>
    
 </template>
