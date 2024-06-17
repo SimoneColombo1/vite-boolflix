@@ -21,5 +21,4 @@ Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricerca 
 1 importo l'api per le serie tv
 2 collego l'opzione search anche per l'api delle serie tv
 3 stampo a schermo
-4 creo un array con delle bandiere di alcune nazioni e una globale
-5 tramite dei v-if stampo le bandiere corrispendenti alle nazioni
+5 tramite dei v-if e v-else-if stampo le bandiere corrispendenti alle nazioni
