@@ -37,7 +37,7 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
      
      },
  Search(textSearched){
-  console.log(textSearched);
+  
   this.getTvSeries(textSearched);
   this.getFilms(textSearched);
  },
