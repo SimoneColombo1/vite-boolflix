@@ -126,8 +126,10 @@ main{
 .cards-container{
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   list-style: none;
   padding-top: 9rem;
+  height: 700px;
 }
 </style>
