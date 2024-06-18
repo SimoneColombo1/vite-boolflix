@@ -3,6 +3,10 @@ import SearchImput from './components/SerachImput.vue';
 import TvSeriesList from  './components/TvSeriesList.vue';
 import FilmList from './components/FilmList.vue';
 import axios from 'axios';
+
+
+
+
 export default {
   components:{
     SearchImput,
@@ -87,6 +91,7 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
   <ul>
   <FilmList :films="films"/>
   <TvSeriesList :TvSeries="TvSeries"/>
+  
 </ul>
   <SearchImput @Searched-Film="Search" />
   
