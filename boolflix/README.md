@@ -39,4 +39,6 @@ Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezz
 1 Creo una funzione che divide il rating dell'app per 2
 poi con una serie di if else arrotondo il rating
 
-2poi in pagina uso dei v-if else per le stelline
+2 poi in pagina uso dei v-if else per le stelline
+
+3 creo degli src con il link unito all'elemento dell'api poster_path
