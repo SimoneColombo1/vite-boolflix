@@ -42,8 +42,13 @@ props:{
    <span class="flag" v-else="">
     <img src="../assets/flags/world-flag.png">
    </span>
-    
-    {{ film.vote_average }}
+    <span v-if="film.vote_average /2 > 0.1 && film.vote_average /2 < 0.9"> 1</span>
+    <span v-else-if="film.vote_average /2 > 1.1 && film.vote_average /2 < 1.9">2</span>
+    <span v-else-if="film.vote_average /2 > 2.1 && film.vote_average /2 < 2.9">2</span>
+    <span v-else-if="film.vote_average /2 > 3.1 && film.vote_average /2 < 3.9">3</span>
+    <span v-else-if="film.vote_average /2 > 4.1 && film.vote_average /2 < 4.9">4</span>
+    <span v-else>
+        {{ film.vote_average / 2 }}</span>
 </li>
   
 </template>

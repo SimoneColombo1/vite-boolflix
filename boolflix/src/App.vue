@@ -13,7 +13,7 @@ export default {
     return {
       films : [],
       TvSeries:[],
-  
+      StarRatings:0,
       
     }
   },
@@ -41,6 +41,7 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
   
   this.getTvSeries(textSearched);
   this.getFilms(textSearched);
+  
  },
  getTvSeries(textSearched){
       
@@ -51,6 +52,10 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
           // handle success
           console.log(response.data.results);
           this.TvSeries = response.data.results;
+             
+        
+ 
+          
         })
         .catch(function (error) {
           // handle error
@@ -61,17 +66,20 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
         });
            
            },
-
-  },
+      
+ 
   created() {
    // this.getFilms();
     //this.Search();
     //this.getTvSeries();
+    
+   
   },
  
-}
-
  
+
+}
+}
 </script>
 
 <template>
