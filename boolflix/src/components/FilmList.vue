@@ -19,7 +19,7 @@ props:{
 <template>
 
     <li v-for="(film, index) in films" :key="index">
-      <img :src="'http://image.tmdb.org/t/p/w300'+ film.poster_path">
+      <img :src="'http://image.tmdb.org/t/p/w300'+ film.poster_path" :alt="film.title" >
  {{ film.title }}
  {{ film.original_title }}
    

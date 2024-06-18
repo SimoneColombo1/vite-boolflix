@@ -15,7 +15,7 @@ props:{
 
 <template>
 <li v-for="(serie, index) in TvSeries" :key="index">
-    <img :src="'http://image.tmdb.org/t/p/w300'+ serie.poster_path">
+    <img :src="'http://image.tmdb.org/t/p/w300'+ serie.poster_path" :alt="serie.name">
 {{ serie.name }}
 {{ serie.original_name }}
 <span class="flag" v-if="serie.original_language==='it'">
@@ -37,7 +37,8 @@ props:{
    <span class="flag" v-else="">
     <img src="../assets/flags/world-flag.png">
    </span>
-  <span v-if="film.vote_average /2 > 0.1 && film.vote_average /2 < 0.9"> 
+  
+        <span v-if="serie.vote_average /2 > 0.1 && serie.vote_average /2 < 0.9"> 
         
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
@@ -46,72 +47,28 @@ props:{
         <i class="fa-regular fa-star"></i>
     
     </span>
-    <span v-else-if="film.vote_average /2 > 1.1 && film.vote_average /2 < 1.9">
+    <span v-else-if="serie.vote_average /2 > 1.1 && serie.vote_average /2 < 1.9">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </span>
-    <span v-else-if="film.vote_average /2 > 2.1 && film.vote_average /2 < 2.9">
+    <span v-else-if="serie.vote_average /2 > 2.1 && serie.vote_average /2 < 2.9">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </span>
-    <span v-else-if="film.vote_average /2 > 3.1 && film.vote_average /2 < 3.9">
+    <span v-else-if="serie.vote_average /2 > 3.1 && serie.vote_average /2 < 3.9">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-regular fa-star"></i>
     </span>
-    <span v-else-if="film.vote_average /2 > 4.1 && film.vote_average /2 < 4.9">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-    </span>
-    <span v-else>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        </span>
-        <span v-if="serie.vote_average /2 > 0.1 && film.vote_average /2 < 0.9"> 
-        
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    
-    </span>
-    <span v-else-if="serie.vote_average /2 > 1.1 && film.vote_average /2 < 1.9">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-    <span v-else-if="serie.vote_average /2 > 2.1 && film.vote_average /2 < 2.9">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-    <span v-else-if="serie.vote_average /2 > 3.1 && film.vote_average /2 < 3.9">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-    </span>
-    <span v-else-if="serie.vote_average /2 > 4.1 && film.vote_average /2 < 4.9">
+    <span v-else-if="serie.vote_average /2 > 4.1 && serie.vote_average /2 < 4.9">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -132,4 +89,6 @@ props:{
 
 
 <style scoped>
+
+
 </style>

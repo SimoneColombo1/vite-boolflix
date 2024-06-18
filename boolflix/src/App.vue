@@ -88,7 +88,7 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
 
 <template>
  <main>
-  <ul>
+  <ul >
   <FilmList :films="films"/>
   <TvSeriesList :TvSeries="TvSeries"/>
   
