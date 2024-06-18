@@ -18,7 +18,7 @@ props:{
 
 <template>
 
-    <li v-for="(film, index) in films" :key="index">
+    <li v-for="(film, index) in films" :key="index" class="card">
       <img :src="'http://image.tmdb.org/t/p/w300'+ film.poster_path" :alt="film.title" >
  {{ film.title }}
  {{ film.original_title }}
@@ -90,4 +90,11 @@ props:{
   
 </template>
 
-<style scoped></style>
+<style lang="scss"  scoped>
+@use '../styles/partials/mixins' as *;
+
+.flag{
+   @include flags();
+}
+
+</style>

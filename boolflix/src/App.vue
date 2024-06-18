@@ -87,18 +87,35 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
 </script>
 
 <template>
+ <header>
+ 
+ <SearchImput @Searched-Film="Search" />
+</header>
  <main>
-  <ul >
+  <ul class="cards-container">
   <FilmList :films="films"/>
   <TvSeriesList :TvSeries="TvSeries"/>
   
 </ul>
-  <SearchImput @Searched-Film="Search" />
+  
   
  </main>
    
 </template>
 
-<style scoped>
+<style scoped  lang="scss">
+@use './styles/general.scss';
+@use './styles/partials/mixins';
 
+main{
+  background-color: #1b1b1b;
+}
+
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  list-style: none;
+
+}
 </style>

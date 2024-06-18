@@ -88,7 +88,11 @@ props:{
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/partials/mixins' as *;
 
+.flag{
+   @include flags();
+}
 
 </style>
