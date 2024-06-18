@@ -19,8 +19,11 @@ props:{
 <template>
 
     <li v-for="(film, index) in films" :key="index" class="card">
-      <img :src="'http://image.tmdb.org/t/p/w300'+ film.poster_path" :alt="film.title" >
- {{ film.title }}
+      <div class="card-image">
+        <img :src="'http://image.tmdb.org/t/p/w342'+ film.poster_path" :alt="film.title">
+ </div>
+ <div class="card-elements">
+      {{ film.title }}
  {{ film.original_title }}
    
     <span class="flag" v-if="film.original_language==='it'">
@@ -86,15 +89,45 @@ props:{
         <i class="fa-regular fa-star"></i>
         <i class="fa-regular fa-star"></i>
         </span>
+    
+</div>
 </li>
   
 </template>
 
 <style lang="scss"  scoped>
 @use '../styles/partials/mixins' as *;
+ 
+img{
+    height: 516px;
+}
+
 
 .flag{
    @include flags();
 }
 
+.card{
+    margin: 0.5rem;
+
+
+.card-image{
+    &:hover{
+        display: none;
+    }
+}
+
+.card-elements{
+    
+
+   display: none;
+
+
+ &:hover{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 516px;}
+   }
+   }
 </style>

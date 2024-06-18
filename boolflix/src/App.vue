@@ -107,8 +107,20 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=91729d2a0cf04e5b98d
 @use './styles/general.scss';
 @use './styles/partials/mixins';
 
+header{
+  background-color: black;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 main{
   background-color: #1b1b1b;
+  height: 90vh;
+  
+  
+ 
 }
 
 .cards-container{
@@ -116,6 +128,6 @@ main{
   flex-direction: row;
   overflow-y: scroll;
   list-style: none;
-
+  padding-top: 9rem;
 }
 </style>
